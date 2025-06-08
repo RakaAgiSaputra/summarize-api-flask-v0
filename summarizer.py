@@ -4,7 +4,7 @@ from goose3 import Goose
 import nltk
 from Sastrawi.StopWordRemover.StopWordRemoverFactory import StopWordRemoverFactory
 
-nltk.download('punkt')
+nltk.download('punkt_tab')
 
 factory = StopWordRemoverFactory()
 stopwords = factory.get_stop_words()
