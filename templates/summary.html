@@ -1,0 +1,22 @@
+<!-- templates/summary.html -->
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Ringkasan - {{ title }}</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        mark { background-color: yellow; }
+    </style>
+</head>
+<body>
+    <h1>Ringkasan - {{ title }}</h1>
+    {% for sentence in sentences %}
+        {% if sentence in best_sentences %}
+            <p><mark>{{ sentence }}</mark></p>
+        {% else %}
+            <p>{{ sentence }}</p>
+        {% endif %}
+    {% endfor %}
+</body>
+</html>
