@@ -2,14 +2,14 @@ from flask import Flask, request, render_template, jsonify
 from summarizer import extract_article_text, summarize_text
 
 app = Flask(__name__)
-API_KEY = "123456ABCDEF"
+# API_KEY = "123456ABCDEF"
 
-@app.before_request
-def require_api_key():
-    if request.path == '/summarize':
-        api_key = request.headers.get("x-api-key")
-        if api_key != API_KEY:
-            return jsonify({"error": "Unauthorized"}), 401
+# @app.before_request
+# def require_api_key():
+#     if request.path == '/summarize':
+#         api_key = request.headers.get("x-api-key")
+#         if api_key != API_KEY:
+#             return jsonify({"error": "Unauthorized"}), 401
 
 
 @app.route('/summarize', methods=['GET', 'POST'])
